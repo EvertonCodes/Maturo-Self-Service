@@ -1,0 +1,77 @@
+/* Cadastro */
+.Cadastro {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    font-size: 16px;
+    color: #000000;
+    text-emphasis: none;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #0e9415;
+    color: white;
+    font-size: 1.2em;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #10c73e;
+}
+
+@media screen and (max-width: 768px) {
+    .Reservas {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.message {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-align: center;
+    display: none;
+}
+
+.message.error {
+    background-color: #f44336;
+}

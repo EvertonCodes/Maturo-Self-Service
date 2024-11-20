@@ -1,0 +1,100 @@
+/* Responsividade */
+@media (max-width: 480px) {
+    #logo {
+        font-size: 2em;
+    }
+
+    .header-text h2 {
+        font-size: 1em;
+    }
+
+    #banner h2 {
+        font-size: 1.5em;
+    }
+
+    #banner p {
+        font-size: 0.9em;
+    }
+}
+
+/* Responsividade para telas grandes (acima de 1920px) */
+@media (min-width: 1080px) {
+    header {
+        position: relative;
+        font-size: x-large;
+        height: 100vh; 
+        overflow: hidden; 
+    }
+
+    /* Imagem do Cabeçalho */
+    .header-image {
+        height: 100%; 
+        width: 100%; 
+    }
+
+    .header-image img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
+        object-position: bottom; 
+    }
+    
+    #logo {
+        font-size: 4em;
+    }
+
+    .header-text h2 {
+        font-size: 2em;
+    }
+
+    #banner h2 {
+        font-size: 3em;
+    }
+
+    #banner p {
+        font-size: 1.5em;
+    }
+}
+
+/* Responsividade para 4K (3840px e acima) */
+@media (min-width: 3840px) {
+    header {
+        position: relative;
+        font-size: x-large;
+        height: 100vh; 
+        overflow: hidden; 
+    }
+
+    /* Imagem do Cabeçalho */
+    .header-image {
+        height: 100%; 
+        width: 100%;
+    }
+
+    .header-image img {
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
+        object-position: bottom; 
+    }
+
+    #logo {
+        font-size: 5em;
+    }
+
+    .header-text h2 {
+        font-size: 2.5em;
+    }
+
+    #banner h2 {
+        font-size: 3.5em;
+    }
+
+    #banner p {
+        font-size: 2em;
+    }
+
+    .menu, #contact {
+        max-width: 1200px; 
+    }
+}

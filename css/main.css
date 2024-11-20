@@ -1,0 +1,466 @@
+/* main.css */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+::-webkit-scrollbar {
+    display: none; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Afacad Flux";
+    font-size: medium;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    position: relative;
+    font-size: x-large;
+    height: 100vh; 
+    overflow: hidden;/
+}
+
+/* Imagem do Cabeçalho */
+.header-image {
+    height: 100%; 
+    width: 100%; 
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: bottom;
+}
+
+/* Navegação */
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, #8b451389, #a0512d00); 
+    padding: 10px 0;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #333333;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.toggle-button {
+    padding-left: 10px;
+    display: none; 
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.toggle-button i {
+    font-size: 20px; 
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        margin: 10px;
+        display: none;
+        flex-direction: column; 
+        position: absolute;
+        top: 40px; 
+        left: 0;
+        font-size: 14px;
+        left: -3%; 
+    }
+
+    .nav-menu.active {
+        display: flex; 
+    }
+
+    .toggle-button {
+        display: block; /
+    }
+
+    .nav-menu a::after {
+       position: relative;
+    }
+
+    .nav-menu a {
+        font-size: 16px; 
+    }
+    
+}
+
+
+/* Texto do Cabeçalho */
+.header-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    text-align: center;
+}
+
+#logo {
+    text-align: center;
+    font-size: 80px;
+    position: relative;
+}
+
+.header-text h2 {
+    font-size: 1.5em;
+}
+
+/* Banner */
+#banner {
+    background: #f4f4f4;
+    padding: 50px 0;
+    color: #333;
+    text-align: center;
+}
+
+#banner h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+#banner p {
+    font-size: 1.2em;
+}
+
+/* Seção de Menu */
+
+.menu {
+    max-width: 1100px;
+    margin: 0 60px 35px;
+    padding: 20px 10px;
+}
+
+/*Tela de celulares pequenos */
+@media (max-width: 480px) {
+    .menu {
+        margin: 0 auto;
+        width: 95%; 
+        padding: 15px; 
+    }
+
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+        display: none; 
+    }
+} 
+
+/*Tela de celulares médios */
+@media (min-width: 481px) and (max-width: 767px) {
+    .menu {
+        margin: 0 auto;
+        width: 90%; 
+        padding: 20px;
+    }
+
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+        display: none; 
+    }
+} 
+
+/*Tela de Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .menu {
+        margin: 0 auto;
+        width: 85%; 
+        padding: 25px; 
+    }
+
+    .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after,
+    .swiper-button-prev:after, .swiper-rtl .swiper-button-next:after {
+        display: none; 
+    }
+} 
+
+.menu .pratos {
+    list-style: none;
+}
+
+.plink {
+    text-decoration: none;
+}
+
+.menu .pratos {
+    display: block;
+    background: #e5e8e7;
+    padding: 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.137);
+    transition: 0.2s ease;
+}
+
+.menu .pratos:hover {
+    border-color: #010201;
+}
+
+.menu .pratos .pimagem {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu .pratos .prato {
+    color: #000000fb;
+    margin: 16px 0 18px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    background: #7c73612f;
+    width: fit-content;
+    border-radius: 50px;
+}
+
+.menu .pratos .pdesc {
+    font-size: 1.19rem;
+    color: #000;
+    font-weight: 600;
+}
+
+.menu .pratos .card-button {
+    height: 35px;
+    width: 35px;
+    color: #000000;
+    border-radius: 50%;
+    margin: 30px 0 5px;
+    background: none;
+    cursor: pointer;       
+    border: 2px solid rgb(119, 116, 112);
+    transform: rotate(-45deg);
+    transition: 0.4s ease;
+}
+
+.menu .pratos .card-button {
+    color: #fff;
+    background: none;
+}
+
+.swiper-horizontal>.swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    bottom: 5px; 
+}
+
+/*mapa*/
+#map {
+    text-align: center; 
+    margin: 90px 0; 
+}
+
+#map iframe {
+    max-width: 100%; 
+    height: 400px; 
+    border: none; 
+    border-radius: 2%;
+}
+
+#map h2 {
+    font-size: 2em;
+    color: #333; 
+    margin-bottom: 15px;
+    margin-top: 3%; 
+}
+
+/* Rodapé */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between; 
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.comments-section {
+    flex: 1; 
+    text-align: left; 
+    margin-right: 20px; 
+    border-bottom: 2px solid #fff; 
+    padding-bottom: 10px; 
+}
+
+
+.comments-section h3 {
+    padding: auto;
+    margin-top: auto;
+    margin-bottom: 10px;
+}
+
+.comments-section p {
+    margin: 10px 0;
+    margin-top: auto;
+}
+
+/* Seção dos Donos */
+.owners-section {
+    flex: 1; 
+    text-align: center; 
+    border-bottom: 2px solid #fff; 
+    padding-bottom: 10px;
+}
+
+.owners-section h3 {
+    margin-bottom: 10px; 
+    margin-top: auto; 
+}
+
+.owners-images {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    margin-top: auto; 
+}
+
+.owners-images img {
+    width: 100px; 
+    height: 100px;
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin: 10px 0; 
+}
+
+.footer-bottom {
+    margin-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 5px 0; 
+}
+
+.footer-bottom ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-bottom ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-content > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.swiper-button-prev :hover{
+    color: white;
+}
+
+#about, #our-values, #history {
+    max-width: 1100px; 
+    margin: 20px auto;
+    padding: 20px; 
+    background: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.imgsobre {
+    text-align: center;
+    margin: auto;
+    padding: auto;
+    padding-top: 2%;
+}
+    
+
+
+#our-values ul {
+    list-style: disc;
+    margin-left: 20px; 
+}
+
+footer {
+    background: #333; 
+    color: white; 
+}
+
+.fa-twitter {
+    color: #008AD8;
+    filter: brightness(1.2);
+}
+
+.fa-facebook {
+    color: #1877F2;
+    filter: brightness(1.2);
+}
+
+.fa-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(1.3);
+}
+
