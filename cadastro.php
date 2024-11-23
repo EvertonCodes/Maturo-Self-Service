@@ -1,35 +1,39 @@
 <?php
 
-$servername = "localhost";
-$username = "matuto"; 
-$password = "faculweb24"; 
-$dbname = "restaurante_matuto";
+$dbfile = "restaurante_matuto.db"; 
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new PDO("sqlite:" . $dbfile);
 
-if ($conn->connect_error) {
-    echo "Erro de conexão: " . $conn->connect_error; 
-    exit(); 
-}
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+  
     $nome = $_POST['nome'];
     $email = $_POST['email'];
     $telefone = $_POST['telefone'];
 
-  
-    $sql = "INSERT INTO cadastros (nome, email, telefone) VALUES ('$nome', '$email', '$telefone')";
+    
+    $sql = "INSERT INTO cadastros (nome, email, telefone) VALUES (:nome, :email, :telefone)";
+    
+    
+    $stmt = $conn->prepare($sql);
 
-  
-    if ($conn->query($sql) === TRUE) {
-        echo "sucesso"; 
-    } else {
-        echo "Erro ao cadastrar: " . $conn->error; 
+    
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':telefone', $telefone);
+
+    
+    try {
+        $stmt->execute();
+        echo "Sucesso ao cadastrar!"; 
+    } catch (PDOException $e) {
+        echo "Erro ao cadastrar: " . $e->getMessage(); 
     }
 } else {
     echo "Erro: Nenhum dado enviado!"; 
 }
 
-$conn->close();
+$conn = null;
 ?>
